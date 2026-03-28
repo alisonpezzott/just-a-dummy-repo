@@ -9,4 +9,6 @@ Task 0004 completed!
 Task 0005 completed!
 Task 0006 completed!
 
-Added a github workflow to block merge from other branches to main except develop.   
+Added a github workflow to block merge from other branches to main except develop.
+
+Tested the workflow and it works as expected.
