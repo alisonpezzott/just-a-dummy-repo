@@ -1,0 +1,17 @@
+name: PR Target Check
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  block-direct-to-main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Block PRs to main that are not from develop
+        if: github.base_ref == 'main' && github.head_ref != 'develop'
+        run: |
+          echo "::error::PRs para 'main' só são permitidos a partir da branch 'develop'."
+          echo "Por favor, altere o target do seu PR para 'develop'."
+          exit 1
